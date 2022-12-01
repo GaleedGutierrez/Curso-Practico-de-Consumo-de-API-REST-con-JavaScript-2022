@@ -1,27 +1,16 @@
-# base-pug-sass-y-ts
-Base para proyectos con PUG, SASS y TS
+<h2 align="center"> Work together 😄 </h2>
 
-## Trabajemos juntos
-<div style="
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	place-items: center;
-">
-	<a href="https://www.linkedin.com/in/galeedgutierrez/">
-		<img src="./assets/readme/linkedin-icon.webp" alt="LinkedIn icon" width="100px">
-	</a>
-	<a href="https://github.com/GaleedGutierrez">
-		<img src="./assets/readme/github-icon.webp" alt="Github icon" width="100px">
-	</a>
-	<a href="https://twitter.com/GutierrezGaleed">
-		<img src="./assets/readme/twitter-icon.webp" alt="Twitter icon" width="100px">
-	</a>
-	<a href="https://www.instagram.com/galeedgutierrez/">
-		<img src="./assets/readme/instagram-icon.webp" alt="Instagram icon" width="100px">
-	</a>
-	<a href="https://www.facebook.com/galeedgutierrez/">
-		<img src="./assets/readme/facebook-icon.webp" alt="Facebook icon" width="100px">
-	</a>
+<div align="center">
+    <a href="https://www.linkedin.com/in/galeedgutierrez/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn icon">
+    </a>
+    <a href="https://twitter.com/GutierrezGaleed" target="_blank">
+        <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter icon">
+    </a>
+    <a href="https://www.instagram.com/galeedgutierrez/" target="_blank">
+        <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram icon">
+    </a>
+    <a href="https://www.facebook.com/GaleedGutierrez" target="_blank">
+        <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook icon">
+    </a>
 </div>
-
-En caso de que typescript no funcione con node usamos: npm i -D @types/node 

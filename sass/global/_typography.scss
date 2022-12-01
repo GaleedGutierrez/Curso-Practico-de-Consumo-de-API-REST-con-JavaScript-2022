@@ -1,7 +1,12 @@
 // font family
-// $primary-generic-font: helvetica, arial, sans-serif;
-// $secondary-generic-font: verdana;
-// $primary-font: "Poppins", sans-serif, $primary-generic-font, $secondary-generic-font;
+@font-face {
+	font-family: Mona-Sans;
+	src: url("../assets/fonts/Mona-Sans.ttf");
+}
+
+$primary-generic-font: helvetica, arial, sans-serif;
+$primary-font: "Mona-Sans", $primary-generic-font;
+
 // $font-x-large: 3.2rem;
 // $font-large: 2.4rem;
 
