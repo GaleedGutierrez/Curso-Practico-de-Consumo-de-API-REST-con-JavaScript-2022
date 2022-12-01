@@ -1,15 +1,16 @@
 extend ./components/global/_global.pug
 block head
-    - const SEE_HEADER = false
-    - const SEE_FOOTER = false
-    +style-head("homepage/style.css")
-    //- +style-head-responsive("homepage/tablet.css", "800")
-    //- +style-head-responsive("homepage/desktop.css", "1024")
-    +titles("")
+	- const SEE_HEADER = false
+	- const SEE_FOOTER = false
+	+style-head("style.css")
+	//- +style-head-responsive("homepage/tablet.css", "800")
+	//- +style-head-responsive("homepage/desktop.css", "1024")
+	+titles("Platzi Movies")
 block main
-    main.main
+	main.main
+		h1 PlatziMovies
 
 block scripts
-    script(async src="https://www.googletagmanager.com/gtag/js?id=G-M8H4YB694S")
+	script(async src="https://www.googletagmanager.com/gtag/js?id=G-M8H4YB694S")
 	script(src="../dist/googleAnalytics.js")
-
+	script(type="module" src="../dist/index.js")
