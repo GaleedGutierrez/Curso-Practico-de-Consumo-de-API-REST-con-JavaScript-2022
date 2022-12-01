@@ -1,0 +1,57 @@
+// $very-light-pink: #c7c7c7;
+// $text-input-field: #f7f7f7;
+// $hospital-green: #acd9b2;
+// $hospital-green-hard: #91B888;
+// $dark: #232830;
+// $white: #ffffff;
+// $black: #000000;
+
+
+body {
+	background-color: $set-color;
+	color: $set-color;
+}
+
+p {
+	color: $set-color;
+}
+
+a {
+	color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+	color: inherit;
+}
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+	background-color: transparent;
+	color: inherit;
+}
+
+/*
+    Configuramos el texto que seleccionamos
+    * Cambiar variables
+*/
+// ::selection {
+//     background-color: var(--primary-color);
+//     color: var(--secondary-color);
+// }
