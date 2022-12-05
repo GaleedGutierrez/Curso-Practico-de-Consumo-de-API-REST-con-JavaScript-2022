@@ -7,9 +7,6 @@
 $primary-generic-font: helvetica, arial, sans-serif;
 $primary-font: "Mona-Sans", $primary-generic-font;
 
-// $font-x-large: 3.2rem;
-// $font-large: 2.4rem;
-
 // font size
 @mixin font-x-large {
 	font-size: 3.2rem;
@@ -119,11 +116,6 @@ a {
 	font-style: inherit;
 }
 
-button,
-input[type="submit"] {
-	@include font-button;
-}
-
 h4,
 h5,
 h6,
@@ -146,4 +138,9 @@ button,
 label {
 	font-family: inherit;
 	font-size: inherit;
+}
+
+button,
+input[type="submit"] {
+	@include font-button;
 }

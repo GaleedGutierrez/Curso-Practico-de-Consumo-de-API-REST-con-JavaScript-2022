@@ -1,0 +1,13 @@
+.main__button-see-more {
+	padding: 1.2rem;
+	border: 0.2rem solid $purple;
+	border-radius: 0.8rem;
+	background-color: $purple;
+	color: $white;
+
+	&:active {
+		border-color: $soft-purple;
+		background-color: $soft-purple;
+		color: $white;
+	}
+}

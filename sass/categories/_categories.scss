@@ -1,0 +1,45 @@
+.main__categories {
+	display: grid;
+	row-gap: 0.8rem;
+	grid-template-columns: repeat(2, 12rem);
+	justify-content: space-around;
+	margin-block-end: 2.4rem;
+}
+
+.categories__category {
+	display: flex;
+	gap: 1.2rem;
+	align-items: center;
+
+	&::before {
+		display: inline-block;
+		content: "";
+		width: 3rem;
+		height: 3rem;
+		border-radius: 0.8rem;
+	}
+}
+
+.categories__category--action::before {
+	background-color: $action;
+}
+
+.categories__category--aventure::before {
+	background-color: $aventure;
+}
+
+.categories__category--comedy::before {
+	background-color: $comedy;
+}
+
+.categories__category--romance::before {
+	background-color: $romance;
+}
+
+.categories__category--music::before {
+	background-color: $music;
+}
+
+.categories__category--drama::before {
+	background-color: $drama;
+}

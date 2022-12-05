@@ -1,15 +1,82 @@
 extend ./components/global/_global.pug
 block head
-	- const SEE_HEADER = false
-	- const SEE_FOOTER = false
+	- const SEE_HEADER = true
+	- const SEE_FOOTER = true
 	+style-head("style.css")
 	//- +style-head-responsive("homepage/tablet.css", "800")
-	//- +style-head-responsive("homepage/desktop.css", "1024")
+	+style-head-responsive("desktop.css", "1024")
 	+titles("Platzi Movies")
 block main
 	main.main
-		h1 PlatziMovies
+		section.main__trending-preview
+			.trending-preview__header
+				h2.trending-preview__title Tendencias
+				button.trending-preview-header__button.main__button-see-more Ver más
+			section.carousel
+				.carousel-container
+					//- article
+					article.carousel__item
+						+figure-img("../assets/img/Movie Img.png", "Domy img")
+					article.carousel__item
+						+figure-img("../assets/img/Movie Img.png", "Domy img")
+					article.carousel__item
+						+figure-img("../assets/img/Movie Img.png", "Domy img")
+					article.carousel__item
+						+figure-img("../assets/img/Movie Img.png", "Domy img")
+					article.carousel__item
+						+figure-img("../assets/img/Movie Img.png", "Domy img")
+					article.carousel__item
+						+figure-img("../assets/img/Movie Img.png", "Domy img")
+					article.carousel__item
+						+figure-img("../assets/img/Movie Img.png", "Domy img")
 
+		section.main__categories
+			p.categories__category.categories__category--action Acción
+			p.categories__category.categories__category--aventure Aventura
+			p.categories__category.categories__category--comedy Comedia
+			p.categories__category.categories__category--romance Romance
+			p.categories__category.categories__category--music Música
+			p.categories__category.categories__category--drama Drama
+
+		section.main__movie-details.hidden
+			+figure-img("../assets/img/deadpool.png", "Domy img").movie-details__img
+			.movie-details__data-container
+				.movie-details__header
+					h2.data-container__title Deadpool 2
+					.data-container__rating-container
+						p.material-symbols-outlined.data-container__rating-star star
+						p.data-container__rating 7.6
+				p.movie-details__description Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life.
+				.main__categories
+					p.categories__category.categories__category--action Acción
+					p.categories__category.categories__category--aventure Aventura
+					p.categories__category.categories__category--comedy Comedia
+
+		section.main__similar-movies.hidden
+			h3.similar-movies__title Películas similares
+			section.carousel
+				.carousel-container
+					//- article
+					article.carousel__item
+						+figure-img("../assets/img/Movie Img.png", "Domy img")
+					article.carousel__item
+						+figure-img("../assets/img/Movie Img.png", "Domy img")
+					article.carousel__item
+						+figure-img("../assets/img/Movie Img.png", "Domy img")
+
+		section.main__generic-list.hidden
+			.generic-list__container
+				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
+				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
+				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
+				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
+				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
+				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
+				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
+				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
+				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
+				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
+			button.generic-list__button.main__button-see-more Ver más
 block scripts
 	script(async src="https://www.googletagmanager.com/gtag/js?id=G-M8H4YB694S")
 	script(src="../dist/googleAnalytics.js")

@@ -50,6 +50,8 @@
 			"justify-self",
 			"align-self",
 
+			"content",
+
 			"width",
 			"max-width",
 			"min-width",
@@ -178,8 +180,19 @@
 			"font-variation-settings",
 
 			"color",
-			"shadow-box"
+			"shadow-box",
+
+			"transition",
+			"transition-property",
+			"transition-duration",
+			"transition-timing-function",
+			"transition-delay",
+
+			"transform",
+			"transform-origin",
+			"transform-style",
+			"transform-box"
 		],
-		"unit-allowed-list": ["rem", "%" , "ms", "deg", "vh", "vw", "fr", "em"]
+		"unit-allowed-list": ["rem", "%" , "ms", "deg", "vh", "vw", "fr", "em", "px"]
 	}
 }

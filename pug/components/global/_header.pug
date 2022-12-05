@@ -1,1 +1,17 @@
 header.header
+	section.header__main-header
+		h1.header__title PlatziMovies
+		form(action="").header__form
+			label(for="search").header__label-search
+				input(type="text", name="search" placeholder="Buscar")#header__search-input-id.header__search-input
+			button(type="submit", value="")#header__button-search-id.header__button-search
+				span.material-symbols-outlined.header__search-icon
+					| search
+
+	section.header__category-movie.hidden
+		span.material-symbols-outlined.category-movie__arrow-left
+			| chevron_left
+		div.category-movie__title-container
+			div.category-movie__box
+			h2.category-movie__title Acción
+//- .header-category-movie esto va en el tag header
