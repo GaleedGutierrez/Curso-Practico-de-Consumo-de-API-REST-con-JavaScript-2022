@@ -1,0 +1,32 @@
+@import "./global/colors";
+
+.header__button-search:hover {
+	border-color: $soft-purple;
+	background-color: $white;
+	color: $soft-purple;
+}
+
+.header__button-search:hover .header__search-icon {
+	color: $soft-purple;
+}
+
+.trending-preview-header__button:hover {
+	border-color: $soft-purple;
+	background-color: $white;
+	color: $soft-purple;
+}
+
+.main__movie-details {
+	display: flex;
+	padding-inline: 2.4rem;
+	margin-block: 3.2rem;
+}
+
+.movie-details__img {
+	max-width: 30rem;
+	margin-inline: auto;
+}
+
+.hidden {
+	display: none;
+}

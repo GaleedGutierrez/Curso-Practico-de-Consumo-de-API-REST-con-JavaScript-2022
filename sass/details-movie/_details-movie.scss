@@ -1,0 +1,35 @@
+.main__movie-details {
+	position: relative;
+}
+
+.movie-details__data-container {
+	position: relative;
+	bottom: 2rem;
+	padding-block-start: 3.2rem;
+	padding-inline: 2.4rem;
+	border-top-left-radius: 1.6rem;
+	border-top-right-radius: 1.6rem;
+	background-color: $white;
+}
+
+.movie-details__header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.data-container__title {
+	font-weight: bold;
+}
+
+.data-container__rating-container {
+	display: flex;
+	gap: 0.4rem;
+}
+
+.data-container__rating {
+	align-self: center;
+}
+
+.movie-details__description {
+	margin-block: 1.6rem;
+}

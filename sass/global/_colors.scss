@@ -1,18 +1,22 @@
-// $very-light-pink: #c7c7c7;
-// $text-input-field: #f7f7f7;
-// $hospital-green: #acd9b2;
-// $hospital-green-hard: #91B888;
-// $dark: #232830;
-// $white: #ffffff;
-// $black: #000000;
+$white: #fbfafb;
+$soft-white: #eeeaf2;
+$purple: #2a0646;
+$soft-purple: #aa84c8;
+$action: #eecc75;
+$action-rgb: 238 204 117;
+$aventure: #cad297;
+$comedy: #a2eee5;
+$romance: #f09d9d;
+$music: #b7eac5;
+$drama: #8ea2ea;
 
 body {
-	// background-color: $set-color;
-	// color: $set-color;
+	background-color: $white;
+	color: $purple;
 }
 
 p {
-	// color: $set-color;
+	color: $purple;
 }
 
 a {

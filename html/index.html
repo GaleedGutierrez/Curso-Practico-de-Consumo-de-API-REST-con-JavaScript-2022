@@ -7,13 +7,123 @@
     <meta name="description" content="Página para consultar sobre películas y series.">
     <meta name="robots" content="index,follow">
     <link rel="shortcut icon" href="../assets/logo/flaticoin.webp" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/desktop.css" media="screen and (min-width:1024px)"/>
     <title>Platzi Movies</title>
   </head>
   <body>
+    <header class="header">
+      <section class="header__main-header">
+        <h1 class="header__title">PlatziMovies</h1>
+        <form class="header__form" action="">
+          <label class="header__label-search" for="search">
+            <input class="header__search-input" type="text" name="search" placeholder="Buscar" id="header__search-input-id">
+          </label>
+          <button class="header__button-search" type="submit" value="" id="header__button-search-id"><span class="material-symbols-outlined header__search-icon">search</span></button>
+        </form>
+      </section>
+      <section class="header__category-movie hidden"><span class="material-symbols-outlined category-movie__arrow-left">chevron_left</span>
+        <div class="category-movie__title-container">
+          <div class="category-movie__box"></div>
+          <h2 class="category-movie__title">Acción</h2>
+        </div>
+      </section>
+    </header>
     <main class="main">
-      <h1>PlatziMovies</h1>
+      <section class="main__trending-preview">
+        <div class="trending-preview__header">
+          <h2 class="trending-preview__title">Tendencias</h2>
+          <button class="trending-preview-header__button main__button-see-more">Ver más</button>
+        </div>
+        <section class="carousel">
+          <div class="carousel-container">
+            <article class="carousel__item">
+              <figure><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+            </article>
+            <article class="carousel__item">
+              <figure><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+            </article>
+            <article class="carousel__item">
+              <figure><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+            </article>
+            <article class="carousel__item">
+              <figure><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+            </article>
+            <article class="carousel__item">
+              <figure><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+            </article>
+            <article class="carousel__item">
+              <figure><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+            </article>
+            <article class="carousel__item">
+              <figure><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+            </article>
+          </div>
+        </section>
+      </section>
+      <section class="main__categories">
+        <p class="categories__category categories__category--action">Acción</p>
+        <p class="categories__category categories__category--aventure">Aventura</p>
+        <p class="categories__category categories__category--comedy">Comedia</p>
+        <p class="categories__category categories__category--romance">Romance</p>
+        <p class="categories__category categories__category--music">Música</p>
+        <p class="categories__category categories__category--drama">Drama</p>
+      </section>
+      <section class="main__movie-details hidden">
+        <figure class="movie-details__img"><img src="../assets/../assets/img/deadpool.png" alt="Domy img"/></figure>
+        <div class="movie-details__data-container">
+          <div class="movie-details__header">
+            <h2 class="data-container__title">Deadpool 2</h2>
+            <div class="data-container__rating-container">
+              <p class="material-symbols-outlined data-container__rating-star">star</p>
+              <p class="data-container__rating">7.6</p>
+            </div>
+          </div>
+          <p class="movie-details__description">Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life.</p>
+          <div class="main__categories">
+            <p class="categories__category categories__category--action">Acción</p>
+            <p class="categories__category categories__category--aventure">Aventura</p>
+            <p class="categories__category categories__category--comedy">Comedia</p>
+          </div>
+        </div>
+      </section>
+      <section class="main__similar-movies hidden">
+        <h3 class="similar-movies__title">Películas similares</h3>
+        <section class="carousel">
+          <div class="carousel-container">
+            <article class="carousel__item">
+              <figure><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+            </article>
+            <article class="carousel__item">
+              <figure><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+            </article>
+            <article class="carousel__item">
+              <figure><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+            </article>
+          </div>
+        </section>
+      </section>
+      <section class="main__generic-list hidden">
+        <div class="generic-list__container">
+          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
+        </div>
+        <button class="generic-list__button main__button-see-more">Ver más</button>
+      </section>
     </main>
+    <footer class="footer">
+      <p class="footer__creators footer__designer">Diseñado por @juandc</p>
+      <p class="footer__creators footer__programmer">Programado por @galeedgutierrez</p>
+    </footer>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8H4YB694S"></script>
     <script src="../dist/googleAnalytics.js"></script>
     <script type="module" src="../dist/index.js"></script>
