@@ -7,6 +7,7 @@
     "watch-ts": "tsc --watch",
     "run-pug": "pug --watch ./pug --out ./html -P"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GaleedGutierrez/Curso-Practico-de-Consumo-de-API-REST-con-JavaScript-2022.git"
