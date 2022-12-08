@@ -1,22 +1,26 @@
-$white: #fbfafb;
-$soft-white: #eeeaf2;
-$purple: #2a0646;
+$purple-light-1: #fbfafb;
+$purple-light-2: #eeeaf2;
 $soft-purple: #aa84c8;
-$action: #eecc75;
+$yellow: #eecc75;
 $action-rgb: 238 204 117;
-$aventure: #cad297;
-$comedy: #a2eee5;
-$romance: #f09d9d;
-$music: #b7eac5;
-$drama: #8ea2ea;
+$green: #cad297;
+$light-blue: #a2eee5;
+$red: #f09d9d;
+$aqua: #b7eac5;
+$dark-blue: #8ea2ea;
+$purple-medium-1: #aa83c8;
+$purple-medium-2: #8b48bf;
+$purple-medium-3: #5c218a;
+$purple-dark-1: #3e0f64;
+$purple-dark-2: #2a0646;
 
 body {
-	background-color: $white;
-	color: $purple;
+	background-color: $purple-light-1;
+	color: $purple-dark-2;
 }
 
 p {
-	color: $purple;
+	color: $purple-dark-2;
 }
 
 a {

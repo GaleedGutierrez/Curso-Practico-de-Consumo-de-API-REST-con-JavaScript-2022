@@ -1,6 +1,6 @@
 import API_KEY from './authentication.mjs';
-import { CAROUSEL_CONTAINER } from './elementsHtml.mjs';
-import { ResultInterface, TheMovieDBInterface } from './interfaces.mjs';
+import { CAROUSEL_CONTAINER, CATEGORIES_CONTAINER } from './elementsHtml.mjs';
+import { CategoriesInterface, ResultInterface, TheMovieDBInterface } from './interfaces.mjs';
 
 const getTrendingMoviesPreview = async (): Promise<ResultInterface[]> => {
 	const RESPONSE = await fetch(`${API}/trending/movie/day?${API_KEY_URL}`);
@@ -27,7 +27,31 @@ const setImgTrending = async (): Promise<void> => {
 	}
 };
 
+const getCategoriesPreview = async () => {
+	const RESPONSE = await fetch(`${API}/genre/movie/list?${API_KEY_URL}`);
+
+	console.log(`${API}/genre/movie/list?${API_KEY_URL}`);
+
+	const DATA: CategoriesInterface = await RESPONSE.json();
+	const CATEGORIES = DATA.genres;
+
+	return CATEGORIES;
+};
+
+const setCategory = async () => {
+	const CATEGORIES = await getCategoriesPreview();
+
+	for (const CATEGORY of CATEGORIES) {
+		const CATEGORY_HTML = `<p id="category-id-${CATEGORY.id}" class="categories__category categories__category--action">${CATEGORY.name}</p>`;
+
+		CATEGORIES_CONTAINER.innerHTML += CATEGORY_HTML;
+	}
+};
+
+
 const API_KEY_URL = `api_key=${API_KEY}`;
-const API = 'https://api.themoviedb.org/3/';
+const API = 'https://api.themoviedb.org/3';
 
 setImgTrending();
+getCategoriesPreview();
+setCategory();

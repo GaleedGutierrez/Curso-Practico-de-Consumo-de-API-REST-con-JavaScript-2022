@@ -26,3 +26,12 @@ export interface ResultInterface {
 export enum MediaTypeInterface {
 	Movie = 'movie',
 }
+
+export interface CategoriesInterface {
+	genres: GenresInterface[];
+}
+
+export interface GenresInterface {
+	id: number;
+	name: string;
+}
