@@ -1,6 +1,8 @@
 import API_KEY from './authentication.mjs';
 import { CAROUSEL_CONTAINER, CATEGORIES_CONTAINER } from './elementsHtml.mjs';
 import { CategoriesInterface, ResultInterface, TheMovieDBInterface } from './interfaces.mjs';
+// FIXME: Comentar la importación de Axios cada vez que se guarden cambios.
+// import axios from 'axios';
 
 const getTrendingMoviesPreview = async (): Promise<ResultInterface[]> => {
 	const RESPONSE = await api(`trending/movie/day`);
@@ -28,7 +30,7 @@ const setImgTrending = async (): Promise<void> => {
 };
 
 const getCategoriesPreview = async () => {
-	const RESPONSE = await api(`genre/movie/list?`);
+	const RESPONSE = await api(`genre/movie/list`);
 	const DATA: CategoriesInterface = RESPONSE.data;
 	const CATEGORIES = DATA.genres;
 
