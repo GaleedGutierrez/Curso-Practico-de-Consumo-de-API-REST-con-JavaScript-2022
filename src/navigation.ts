@@ -1,3 +1,4 @@
+import { setCategory, setImgTrending } from './index.js';
 import { BUTTONS_HOME, BUTTON_SEARCH, BUTTON_TREADING, CATEGORIES_CONTAINER, GENERIC_LIST, HEADER_CATEGORY, HEADER_MAIN, HEADER_TITLE, MOVIE_DETAILS, SIMILAR_MOVIES, TRENDING_PREVIEW } from './nodes.mjs';
 
 const navegador = () => {
