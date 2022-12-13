@@ -64,7 +64,7 @@
 	margin: 0;
 }
 
-.category-movie__arrow-left {
+.header__arrow-left {
 	@include font-x-large;
 
 	margin-block-end: 2.4rem;
@@ -73,6 +73,8 @@
 .header__category-movie {
 	height: 14rem;
 	padding-block-start: 3.6rem;
+	padding-inline-start: 2.4rem;
+	margin-block-end: 3.2rem;
 	background: linear-gradient(180deg, rgb(238 204 117 / 50%) 0%, rgb(238 204 117 / 0%) 72.92%);
 }
 
@@ -80,7 +82,8 @@
 	display: flex;
 	gap: 1.2rem;
 	align-items: center;
-	padding-inline-start: 2.4rem;
+
+	// padding-inline-start: 2.4rem;
 	font-weight: bold;
 
 	&::before {

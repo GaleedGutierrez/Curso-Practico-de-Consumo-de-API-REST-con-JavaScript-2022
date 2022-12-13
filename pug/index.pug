@@ -8,19 +8,19 @@ block head
 	+titles("Platzi Movies")
 block main
 	main.main
-		section.main__trending-preview
+		section#main__trending-preview-id.main__trending-preview
 			.trending-preview__header
 				h2.trending-preview__title Tendencias
-				button.trending-preview-header__button.main__button-see-more Ver más
+				button#trending-preview-header__button-id.trending-preview-header__button.main__button-see-more Ver más
 			section.carousel
 				#main__carousel-container-id.carousel-container
 					//- article.carousel__item
 					//- 	+figure-img("../assets/img/Movie Img.png", "Domy img")
 
-		section#main__categories-id.main__categories
+		section#main__categories-id.main__categories.hidden
 			//- p#category-id-28.categories__category Acción
 
-		section.main__movie-details.hidden
+		section#main__movie-details-id.main__movie-details.hidden
 			+figure-img("../assets/img/deadpool.png", "Domy img").movie-details__img
 			.movie-details__data-container
 				.movie-details__header
@@ -34,7 +34,7 @@ block main
 					p.categories__category.categories__category--aventure Aventura
 					p.categories__category.categories__category--comedy Comedia
 
-		section.main__similar-movies.hidden
+		section#main__similar-movies-id.main__similar-movies.hidden
 			h3.similar-movies__title Películas similares
 			section.carousel
 				.carousel-container
@@ -46,14 +46,8 @@ block main
 					article.carousel__item
 						+figure-img("../assets/img/Movie Img.png", "Domy img")
 
-		section.main__generic-list.hidden
+		section#main__generic-list-id.main__generic-list.hidden
 			.generic-list__container
-				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
-				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
-				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
-				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
-				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
-				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
 				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
 				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
 				+figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img

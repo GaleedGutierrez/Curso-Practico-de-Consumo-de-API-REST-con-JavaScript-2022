@@ -14,31 +14,33 @@
   </head>
   <body>
     <header class="header">
-      <section class="header__main-header">
-        <h1 class="header__title">PlatziMovies</h1>
-        <form class="header__form" action="">
+      <section class="header__main-header" id="header__main-id">
+        <h1 class="header__title" id="header__title-id">PlatziMovies</h1>
+        <button class="material-symbols-outlined header__arrow-left">chevron_left</button>
+        <form class="header__form" action="" id="header__search-form">
           <label class="header__label-search" for="search">
             <input class="header__search-input" type="text" name="search" placeholder="Buscar" id="header__search-input-id">
           </label>
-          <button class="header__button-search" type="submit" value="" id="header__button-search-id"><span class="material-symbols-outlined header__search-icon">search</span></button>
+          <button class="header__button-search" type="submit" id="header__button-search-id"><span class="material-symbols-outlined header__search-icon">search</span></button>
         </form>
       </section>
-      <section class="header__category-movie"><span class="material-symbols-outlined category-movie__arrow-left">chevron_left</span>
-        <h2 class="category-movie__title" id="category-movie__title-id-28">Acción</h2>
+      <section class="header__category-movie hidden" id="header__category-id">
+        <button class="material-symbols-outlined header__arrow-left">chevron_left</button>
+        <h2 class="category-movie__title" id="category-movie__title-id">Acción</h2>
       </section>
     </header>
     <main class="main">
-      <section class="main__trending-preview">
+      <section class="main__trending-preview" id="main__trending-preview-id">
         <div class="trending-preview__header">
           <h2 class="trending-preview__title">Tendencias</h2>
-          <button class="trending-preview-header__button main__button-see-more">Ver más</button>
+          <button class="trending-preview-header__button main__button-see-more" id="trending-preview-header__button-id">Ver más</button>
         </div>
         <section class="carousel">
           <div class="carousel-container" id="main__carousel-container-id"></div>
         </section>
       </section>
-      <section class="main__categories" id="main__categories-id"></section>
-      <section class="main__movie-details hidden">
+      <section class="main__categories hidden" id="main__categories-id"></section>
+      <section class="main__movie-details hidden" id="main__movie-details-id">
         <figure class="movie-details__img"><img src="../assets/../assets/img/deadpool.png" alt="Domy img"/></figure>
         <div class="movie-details__data-container">
           <div class="movie-details__header">
@@ -56,7 +58,7 @@
           </div>
         </div>
       </section>
-      <section class="main__similar-movies hidden">
+      <section class="main__similar-movies hidden" id="main__similar-movies-id">
         <h3 class="similar-movies__title">Películas similares</h3>
         <section class="carousel">
           <div class="carousel-container">
@@ -72,14 +74,8 @@
           </div>
         </section>
       </section>
-      <section class="main__generic-list hidden">
+      <section class="main__generic-list hidden" id="main__generic-list-id">
         <div class="generic-list__container">
-          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
-          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
-          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
-          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
-          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
-          <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
           <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
           <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
           <figure class="generic-list__img"><img src="../assets/../assets/img/Movie Img.png" alt="Domy img"/></figure>
