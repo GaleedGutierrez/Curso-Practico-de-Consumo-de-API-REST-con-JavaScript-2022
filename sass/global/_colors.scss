@@ -1,3 +1,4 @@
+// Hexadecimal
 $purple-light-1: #fbfafb;
 $purple-light-2: #eeeaf2;
 $soft-purple: #aa84c8;
@@ -13,6 +14,15 @@ $purple-medium-2: #8b48bf;
 $purple-medium-3: #5c218a;
 $purple-dark-1: #3e0f64;
 $purple-dark-2: #2a0646;
+
+// RGB
+$yellow-rgb: 238 204 117;
+$red-rgb: 240 157 157;
+$green-rgb: 202 210 151;
+$light-blue-rgb: 162 238 229 ;
+$dark-blue-rgb: 142 162 234;
+$purple-dark-1-rgb: 62 15 100;
+$purple-medium-1-rgb: 170 131 200;
 
 body {
 	background-color: $purple-light-1;

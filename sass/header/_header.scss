@@ -1,3 +1,5 @@
+@import "../global/functions";
+
 .header__main-header {
 	padding-block: 3.6rem 3.2rem;
 	padding-inline: 2.4rem;
@@ -39,11 +41,21 @@
 	border-top-right-radius: 0.8rem;
 	background-color: $purple-dark-2;
 
+	&:hover {
+		border-color: $soft-purple;
+		background-color: $purple-light-1;
+		color: $soft-purple;
+	}
+
 	&:active {
 		border-color: $purple-medium-1;
 		background-color: $purple-medium-1;
 		color: $purple-light-1;
 	}
+}
+
+.header__button-search:hover .header__search-icon {
+	color: $soft-purple;
 }
 
 .header__search-icon {
@@ -67,7 +79,19 @@
 .header__arrow-left {
 	@include font-x-large;
 
+	width: 3.6rem;
+	border-radius: 0.8rem;
 	margin-block-end: 2.4rem;
+
+	&:hover {
+		color: $soft-purple;
+	}
+
+	&:active {
+		border-color: $purple-medium-1;
+		background-color: $purple-medium-1;
+		color: $purple-light-1;
+	}
 }
 
 .header__category-movie {
@@ -75,8 +99,27 @@
 	padding-block-start: 3.6rem;
 	padding-inline-start: 2.4rem;
 	margin-block-end: 3.2rem;
-	background: linear-gradient(180deg, rgb(238 204 117 / 50%) 0%, rgb(238 204 117 / 0%) 72.92%);
 }
+
+#header__category-id-28 { background: get-linear-gradient($yellow-rgb); }
+#header__category-id-12 { background: get-linear-gradient($red-rgb); }
+#header__category-id-16 { background: get-linear-gradient($green-rgb); }
+#header__category-id-35 { background: get-linear-gradient($light-blue-rgb); }
+#header__category-id-80 { background: get-linear-gradient($dark-blue-rgb); }
+#header__category-id-99 { background: get-linear-gradient($purple-dark-1-rgb); }
+#header__category-id-18 { background: get-linear-gradient($purple-medium-1-rgb); }
+#header__category-id-10751 { background: get-linear-gradient($yellow-rgb); }
+#header__category-id-14 { background: get-linear-gradient($red-rgb); }
+#header__category-id-36 { background: get-linear-gradient($green-rgb); }
+#header__category-id-27 { background: get-linear-gradient($light-blue-rgb); }
+#header__category-id-10402 { background: get-linear-gradient($dark-blue-rgb); }
+#header__category-id-9648 { background: get-linear-gradient($purple-dark-1-rgb); }
+#header__category-id-10749 { background: get-linear-gradient($purple-medium-1-rgb); }
+#header__category-id-878 { background: get-linear-gradient($yellow-rgb); }
+#header__category-id-10770 { background: get-linear-gradient($red-rgb); }
+#header__category-id-53 { background: get-linear-gradient($green-rgb); }
+#header__category-id-10752 { background: get-linear-gradient($light-blue-rgb); }
+#header__category-id-37 { background: get-linear-gradient($dark-blue-rgb); }
 
 .category-movie__title {
 	display: flex;

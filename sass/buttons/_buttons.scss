@@ -5,6 +5,12 @@
 	background-color: $purple-dark-2;
 	color: $purple-light-1;
 
+	&:hover {
+		border-color: $soft-purple;
+		background-color: $purple-light-1;
+		color: $soft-purple;
+	}
+
 	&:active {
 		border-color: $soft-purple;
 		background-color: $soft-purple;
