@@ -1,17 +1,16 @@
-import { setCategory, setImgTrending } from './index.js';
-import { BUTTONS_HOME, BUTTON_SEARCH, BUTTON_TREADING, CATEGORIES_CONTAINER, GENERIC_LIST, HEADER_CATEGORY, HEADER_MAIN, HEADER_TITLE, MOVIE_DETAILS, SIMILAR_MOVIES, TRENDING_PREVIEW } from './nodes.mjs';
+import { getMoviesByCategory, setCategory, setImgTrending, setMoviesByCategory } from './index.js';
+import { BUTTONS_HOME, BUTTON_SEARCH, BUTTON_TREADING, CATEGORIES_CONTAINER, GENERIC_LIST, HEADER_CATEGORY, HEADER_MAIN, HEADER_TITLE, MOVIE_DETAILS, SIMILAR_MOVIES, TITLE_CATEGORY, TRENDING_PREVIEW } from './nodes.mjs';
 
 const navegador = () => {
-	console.log({ location });
-
 	const HASHES = {
 		'#trends'    : trendsPage,
 		'#search='   : searchPage,
 		'#movie='    : moviePage,
 		'#category=' : categoryPage,
 	};
+	const HASHES_KEYS = Object.keys(HASHES);
 
-	for (const KEY of Object.keys(HASHES)) {
+	for (const KEY of HASHES_KEYS) {
 		if (location.hash.startsWith(KEY)) {
 			HASHES[KEY as keyof typeof HASHES]();
 
@@ -35,7 +34,7 @@ const homePage = () => {
 	HEADER_TITLE.classList.remove('hidden');
 };
 
-const categoryPage = () => {
+const categoryPage = async () => {
 	console.log('CATEGORY 37');
 	HEADER_MAIN.classList.add('hidden');
 	MOVIE_DETAILS.classList.add('hidden');
@@ -45,6 +44,19 @@ const categoryPage = () => {
 
 	HEADER_CATEGORY.classList.remove('hidden');
 	GENERIC_LIST.classList.remove('hidden');
+
+	const [ HASH_NAME, CATEGORY_INFO ] = location.hash.split('=');
+	const [ ID, NAME ] = CATEGORY_INFO.split('-');
+	const MOVIES = await getMoviesByCategory(ID);
+	const IS_THERE_SPACE = NAME.includes('%20');
+
+	TITLE_CATEGORY.setAttribute('id', `category-movie__title-id-${ID}`);
+	HEADER_CATEGORY.setAttribute('id', `header__category-id-${ID}`);
+	TITLE_CATEGORY.innerHTML = (IS_THERE_SPACE)
+		? NAME.replace('%20', '&nbsp')
+		: NAME;
+	window.scroll(0, 0);
+	setMoviesByCategory(MOVIES);
 };
 
 const moviePage = () => {

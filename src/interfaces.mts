@@ -1,11 +1,11 @@
 export interface TheMovieDBInterface {
 	page: number;
-	results: ResultInterface[];
+	results: MovieInterface[];
 	total_pages: number;
 	total_results: number;
 }
 
-export interface ResultInterface {
+export interface MovieInterface {
 	adult: boolean;
 	backdrop_path: string;
 	id: number;
@@ -24,7 +24,7 @@ export interface ResultInterface {
 }
 
 export enum MediaTypeInterface {
-	Movie = 'movie',
+	MOVIE = 'movie',
 }
 
 export interface CategoriesInterface {
@@ -34,4 +34,15 @@ export interface CategoriesInterface {
 export interface GenresInterface {
 	id: number;
 	name: string;
+}
+
+export interface MoviesByCategoryInterface {
+	page: number;
+	results: MovieInterface[];
+	total_results: number;
+	total_pages: number;
+}
+
+export enum OriginalLanguage {
+	EN = 'en',
 }

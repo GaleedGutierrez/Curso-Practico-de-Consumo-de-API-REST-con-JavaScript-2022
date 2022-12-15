@@ -6,8 +6,8 @@ const $$ = (id: string) => document.querySelectorAll(id);
 export const HEADER_MAIN = $('#header__main-id') as HTMLElement;
 export const HEADER_TITLE = $('#header__title-id') as HTMLHeadingElement;
 export const HEADER_CATEGORY = $('#header__category-id') as HTMLElement;
-export const SEARCH_FORM = $('#header__search-form') as HTMLFormElement;
-export const TITLE_CATEGORY = $('#category-movie__title') as HTMLHeadingElement;
+export const SEARCH_FORM = $('#header__search-form-id') as HTMLFormElement;
+export const TITLE_CATEGORY = $('#category-movie__title-id') as HTMLHeadingElement;
 export const BUTTON_SEARCH = $('#header__button-search-id') as HTMLButtonElement;
 export const BUTTONS_HOME = Array.from($$('.header__arrow-left')) as HTMLButtonElement[];
 
@@ -27,4 +27,5 @@ export const SIMILAR_MOVIES = $('#main__similar-movies-id') as HTMLElement;
 
 // Generic carousel movies
 export const GENERIC_LIST = $('#main__generic-list-id') as HTMLElement;
+export const GENERIC_LIST_CONTAINER = $('#generic-list__container-id') as HTMLElement;
 
