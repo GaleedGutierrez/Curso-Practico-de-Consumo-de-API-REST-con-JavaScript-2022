@@ -1,7 +1,9 @@
-import { getMoviesByCategory, setCategory, setImgTrending, setMoviesByCategory } from './index.js';
+import { getMoviesByCategory, setMoviesByCategory } from './index.js';
 import { BUTTONS_HOME, BUTTON_SEARCH, BUTTON_TREADING, CATEGORIES_CONTAINER, GENERIC_LIST, HEADER_CATEGORY, HEADER_MAIN, HEADER_TITLE, MOVIE_DETAILS, SIMILAR_MOVIES, TITLE_CATEGORY, TRENDING_PREVIEW } from './nodes.mjs';
 
 const navegador = () => {
+	window.scroll(0, 0);
+
 	const HASHES = {
 		'#trends'    : trendsPage,
 		'#search='   : searchPage,
@@ -55,7 +57,6 @@ const categoryPage = async () => {
 	TITLE_CATEGORY.innerHTML = (IS_THERE_SPACE)
 		? NAME.replace('%20', '&nbsp')
 		: NAME;
-	window.scroll(0, 0);
 	setMoviesByCategory(MOVIES);
 };
 
