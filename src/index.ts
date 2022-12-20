@@ -50,9 +50,9 @@ export const getMoviesByCategory = async (id: string) => {
 	return MOVIES;
 };
 
-export const setMoviesByCategory = async (movies: MovieInterface[]) => {
+export const setGenericMoviesList = (movies: MovieInterface[], carousel: boolean) => {
 	GENERIC_LIST_CONTAINER.innerHTML = '';
-	insertMovies(movies, GENERIC_LIST_CONTAINER, false);
+	insertMovies(movies, GENERIC_LIST_CONTAINER, carousel);
 };
 
 const insertMovies = (movies: MovieInterface[], container: HTMLElement, carousel: boolean) => {
@@ -69,6 +69,18 @@ const insertMovies = (movies: MovieInterface[], container: HTMLElement, carousel
 			</figure>
 		</article>`;
 	}
+};
+
+export const getMovieBySearch = async (query: string) => {
+	const RESPONSE: AxiosResponse = await api('search/movie', {
+		params : {
+			query
+		},
+	});
+	const DATA: MoviesByCategoryInterface = RESPONSE.data;
+	const MOVIES: MovieInterface[] = DATA.results;
+
+	return MOVIES;
 };
 
 // export const
