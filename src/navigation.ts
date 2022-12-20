@@ -1,7 +1,7 @@
-import { getMoviesByCategory, setMoviesByCategory } from './index.js';
-import { BUTTONS_HOME, BUTTON_SEARCH, BUTTON_TREADING, CATEGORIES_CONTAINER, GENERIC_LIST, HEADER_CATEGORY, HEADER_MAIN, HEADER_TITLE, MOVIE_DETAILS, SIMILAR_MOVIES, TITLE_CATEGORY, TRENDING_PREVIEW } from './nodes.mjs';
+import { getMovieBySearch, getMoviesByCategory, setGenericMoviesList } from './index.js';
+import { BUTTONS_HOME, BUTTON_SEARCH, BUTTON_TREADING, CATEGORIES_CONTAINER, GENERIC_LIST, HEADER_CATEGORY, HEADER_MAIN, HEADER_TITLE, MOVIE_DETAILS, SEARCH_INPUT, SIMILAR_MOVIES, TITLE_CATEGORY, TRENDING_PREVIEW } from './nodes.mjs';
 
-const navegador = () => {
+const navigator = () => {
 	window.scroll(0, 0);
 
 	const HASHES = {
@@ -57,7 +57,7 @@ const categoryPage = async () => {
 	TITLE_CATEGORY.innerHTML = (IS_THERE_SPACE)
 		? NAME.replace('%20', '&nbsp')
 		: NAME;
-	setMoviesByCategory(MOVIES);
+	setGenericMoviesList(MOVIES, false);
 };
 
 const moviePage = () => {
@@ -73,7 +73,7 @@ const moviePage = () => {
 	HEADER_TITLE.classList.remove('hidden');
 };
 
-const searchPage = () => {
+const searchPage = async () => {
 	TRENDING_PREVIEW.classList.add('hidden');
 	CATEGORIES_CONTAINER.classList.add('hidden');
 	HEADER_CATEGORY.classList.add('hidden');
@@ -83,6 +83,11 @@ const searchPage = () => {
 
 	HEADER_MAIN.classList.remove('hidden');
 	GENERIC_LIST.classList.remove('hidden');
+
+	const [ HASH_NAME, QUERY ] = location.hash.split('=');
+	const MOVIES = await getMovieBySearch(QUERY);
+
+	setGenericMoviesList(MOVIES, false);
 };
 
 const trendsPage = () => {
@@ -98,19 +103,28 @@ const trendsPage = () => {
 	GENERIC_LIST.classList.remove('hidden');
 };
 
-window.addEventListener('load', navegador, false);
-window.addEventListener('hashchange', navegador, false);
 
 BUTTON_TREADING.addEventListener('click', () => {
 	location.hash = '#trends';
 });
 
-BUTTON_SEARCH.addEventListener('click', () => {
-	location.hash = '#search=';
+BUTTON_SEARCH.addEventListener('click', (event: Event) => {
+	event.preventDefault();
+
+	const SEARCH = SEARCH_INPUT.value;
+
+	// console.log(SEARCH);
+
+	// debugger;
+
+	location.hash = `#search=${SEARCH}`;
 });
 
 for (const BUTTON of BUTTONS_HOME) {
 	BUTTON.addEventListener('click', () => {
-		location.hash = '#home';
+		window.history.back();
 	});
 }
+
+window.addEventListener('load', navigator, false);
+window.addEventListener('hashchange', navigator, false);
