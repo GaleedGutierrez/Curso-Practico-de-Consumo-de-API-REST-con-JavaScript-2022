@@ -5,7 +5,7 @@ import { AxiosResponse } from 'axios';
 // FIXME: Comentar la importación de Axios cada vez que se guarden cambios.
 // import axios from 'axios';
 
-const getTrendingMoviesPreview = async (): Promise<MovieInterface[]> => {
+export const getTrendingMoviesPreview = async (): Promise<MovieInterface[]> => {
 	const RESPONSE: AxiosResponse = await api('trending/movie/day');
 	const DATA: TheMovieDBInterface = RESPONSE.data;
 	const MOVIES = DATA.results;
