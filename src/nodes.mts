@@ -1,6 +1,6 @@
 /* eslint-disable padding-line-between-statements */
-const $ = (id: string) => document.querySelector(id);
-const $$ = (id: string) => document.querySelectorAll(id);
+const $ = (selector: string) => document.querySelector(selector);
+const $$ = (selector: string) => document.querySelectorAll(selector);
 
 // Header
 export const HEADER_MAIN = $('#header__main-id') as HTMLElement;
@@ -10,7 +10,7 @@ export const SEARCH_FORM = $('#header__search-form-id') as HTMLFormElement;
 export const SEARCH_INPUT = $('#header__search-input-id') as HTMLInputElement;
 export const TITLE_CATEGORY = $('#category-movie__title-id') as HTMLHeadingElement;
 export const BUTTON_SEARCH = $('#header__button-search-id') as HTMLButtonElement;
-export const BUTTONS_HOME = Array.from($$('.header__arrow-left')) as HTMLButtonElement[];
+export const BUTTONS_GO_BACK = Array.from($$('.header__arrow-left')) as HTMLButtonElement[];
 
 // Trending preview
 export const TRENDING_PREVIEW = $('#main__trending-preview-id') as HTMLElement;

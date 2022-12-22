@@ -1,5 +1,5 @@
-import { getMovieBySearch, getMoviesByCategory, setGenericMoviesList } from './index.js';
-import { BUTTONS_HOME, BUTTON_SEARCH, BUTTON_TREADING, CATEGORIES_CONTAINER, GENERIC_LIST, HEADER_CATEGORY, HEADER_MAIN, HEADER_TITLE, MOVIE_DETAILS, SEARCH_INPUT, SIMILAR_MOVIES, TITLE_CATEGORY, TRENDING_PREVIEW } from './nodes.mjs';
+import { getMovieBySearch, getMoviesByCategory, getTrendingMoviesPreview, setGenericMoviesList } from './index.js';
+import { BUTTONS_GO_BACK, BUTTON_SEARCH, BUTTON_TREADING, CATEGORIES_CONTAINER, GENERIC_LIST, HEADER_CATEGORY, HEADER_MAIN, HEADER_TITLE, MOVIE_DETAILS, SEARCH_INPUT, SIMILAR_MOVIES, TITLE_CATEGORY, TRENDING_PREVIEW } from './nodes.mjs';
 
 const navigator = () => {
 	window.scroll(0, 0);
@@ -24,7 +24,6 @@ const navigator = () => {
 };
 
 const homePage = () => {
-	console.log('HOME');
 	HEADER_CATEGORY.classList.add('hidden');
 	MOVIE_DETAILS.classList.add('hidden');
 	SIMILAR_MOVIES.classList.add('hidden');
@@ -90,7 +89,7 @@ const searchPage = async () => {
 	setGenericMoviesList(MOVIES, false);
 };
 
-const trendsPage = () => {
+const trendsPage = async () => {
 	console.log('TRENDS');
 	HEADER_MAIN.classList.add('hidden');
 	TRENDING_PREVIEW.classList.add('hidden');
@@ -101,30 +100,54 @@ const trendsPage = () => {
 
 	HEADER_CATEGORY.classList.remove('hidden');
 	GENERIC_LIST.classList.remove('hidden');
+
+	TITLE_CATEGORY.innerText = 'Tendencias';
+	HEADER_CATEGORY.setAttribute('id', `header__category-id-28`);
+	TITLE_CATEGORY.setAttribute('id', `category-movie__title-id-28`);
+
+	const MOVIES = await getTrendingMoviesPreview();
+
+	setGenericMoviesList(MOVIES, false);
 };
 
+const goBackButton = () => {
+	const IS_HASH_HOME = location.hash !== '#home';
+	const IS_LAST_NOT_HOME = ARRAY_HASHES.at(-1) !== '#home';
+
+	if (IS_HASH_HOME) ARRAY_HASHES.pop();
+
+	location.hash = (IS_LAST_NOT_HOME)
+		? `${ARRAY_HASHES.at(-1)}`
+		: '#home';
+};
+
+const addHash = () => {
+	const IS_REPEAT = ARRAY_HASHES.some((hash) => location.hash === hash);
+
+	if (!IS_REPEAT)
+		ARRAY_HASHES.push(location.hash);
+};
+
+const goSearchSection = (event: Event) => {
+	event.preventDefault();
+
+	const SEARCH = SEARCH_INPUT.value;
+
+	location.hash = `#search=${SEARCH}`;
+};
 
 BUTTON_TREADING.addEventListener('click', () => {
 	location.hash = '#trends';
 });
 
-BUTTON_SEARCH.addEventListener('click', (event: Event) => {
-	event.preventDefault();
+BUTTON_SEARCH.addEventListener('click', goSearchSection);
 
-	const SEARCH = SEARCH_INPUT.value;
-
-	// console.log(SEARCH);
-
-	// debugger;
-
-	location.hash = `#search=${SEARCH}`;
-});
-
-for (const BUTTON of BUTTONS_HOME) {
-	BUTTON.addEventListener('click', () => {
-		window.history.back();
-	});
+for (const BUTTON of BUTTONS_GO_BACK) {
+	BUTTON.addEventListener('click', goBackButton);
 }
 
+const ARRAY_HASHES = [ '#home', location.hash ];
+
 window.addEventListener('load', navigator, false);
+window.addEventListener('hashchange', addHash, false);
 window.addEventListener('hashchange', navigator, false);
