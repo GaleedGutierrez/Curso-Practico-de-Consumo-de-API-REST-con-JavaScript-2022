@@ -1,4 +1,5 @@
-import { getMovieBySearch, getMoviesByCategory, getTrendingMoviesPreview, setGenericMoviesList } from './index.js';
+import { getMovieById, getMovieBySearch, getMoviesByCategory, getTrendingMoviesPreview, setCategory, setGenericMoviesList } from './index.js';
+import { MovieSearchInterface } from './interfaces.mjs';
 import { BUTTONS_GO_BACK, BUTTON_SEARCH, BUTTON_TREADING, CATEGORIES_CONTAINER, GENERIC_LIST, HEADER_CATEGORY, HEADER_MAIN, HEADER_TITLE, MOVIE_DETAILS, SEARCH_INPUT, SIMILAR_MOVIES, TITLE_CATEGORY, TRENDING_PREVIEW } from './nodes.mjs';
 
 const navigator = () => {
@@ -59,17 +60,44 @@ const categoryPage = async () => {
 	setGenericMoviesList(MOVIES, false);
 };
 
-const moviePage = () => {
+const moviePage = async () => {
 	console.log('MOVIE');
-	HEADER_MAIN.classList.add('hidden');
 	TRENDING_PREVIEW.classList.add('hidden');
 	CATEGORIES_CONTAINER.classList.add('hidden');
-	HEADER_CATEGORY.classList.add('hidden');
 	GENERIC_LIST.classList.add('hidden');
+	HEADER_MAIN.classList.add('hidden');
+	HEADER_TITLE.classList.add('hidden');
+	HEADER_CATEGORY.classList.add('hidden');
 
 	SIMILAR_MOVIES.classList.remove('hidden');
 	MOVIE_DETAILS.classList.remove('hidden');
-	HEADER_TITLE.classList.remove('hidden');
+
+	const [ HASH_NAME, ID ] = location.hash.split('=');
+	const MOVIE = await getMovieById(ID);
+
+	MOVIE_DETAILS.innerHTML = `<button class="material-symbols-outlined movie-details__arrow-left" id="movie-details__button-go-back-id">chevron_left</button>
+	<figure class="movie-details__img">
+		<img src="https://image.tmdb.org/t/p/w500${MOVIE.poster_path}" alt="${MOVIE.title}"/>
+	</figure>
+	<div class="movie-details__data-container">
+	  <div class="movie-details__header">
+		<h2 class="data-container__title">${MOVIE.title}</h2>
+		<div class="data-container__rating-container">
+		  <p class="material-symbols-outlined data-container__rating-star">star</p>
+		  <p class="data-container__rating">${MOVIE.vote_average.toFixed(2)}</p>
+		</div>
+	  </div>
+	  <p class="movie-details__description">${MOVIE.overview}</p>
+	  <div id="similar-movies__categories-container-id" class="main__categories">
+	  </div>
+	</div>`;
+
+	const MOVIE_BUTTON_GO_BACK = document.querySelector('#movie-details__button-go-back-id') as HTMLButtonElement;
+	const MOVIE_CATEGORIES_CONTAINER = document.querySelector('#similar-movies__categories-container-id') as HTMLElement;
+
+	MOVIE_BUTTON_GO_BACK.addEventListener('click', goBackButton);
+
+	setCategory(MOVIE.genres, MOVIE_CATEGORIES_CONTAINER, false);
 };
 
 const searchPage = async () => {
