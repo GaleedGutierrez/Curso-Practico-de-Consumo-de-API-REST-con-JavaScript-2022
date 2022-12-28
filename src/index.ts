@@ -51,9 +51,9 @@ export const getMoviesByCategory = async (id: string) => {
 	return MOVIES;
 };
 
-export const setGenericMoviesList = (movies: MovieSearchInterface[], carousel: boolean) => {
-	GENERIC_LIST_CONTAINER.innerHTML = '';
-	insertMovies(movies, GENERIC_LIST_CONTAINER, carousel);
+export const setGenericMoviesList = (movies: MovieSearchInterface[], container: HTMLElement, carousel: boolean) => {
+	container.innerHTML = '';
+	insertMovies(movies, container, carousel);
 };
 
 const insertMovies = (movies: MovieSearchInterface[], container: HTMLElement, carousel: boolean) => {
@@ -96,6 +96,15 @@ export const getMovieById = async (id: string): Promise<MovieInterface> => {
 
 	return MOVIE;
 };
+
+export const getRelatedMoviesId = async (id: number) => {
+	const RESPONSE: AxiosResponse = await api(`/movie/${id}/recommendations`);
+	const DATA: TheMovieDBInterface = RESPONSE.data;
+	const RELATED_MOVIES = DATA.results;
+
+	return RELATED_MOVIES;
+};
+
 
 const api = axios.create({
 	baseURL : 'https://api.themoviedb.org/3/',
