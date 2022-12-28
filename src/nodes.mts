@@ -25,6 +25,8 @@ export const MOVIE_DETAILS = $('#main__movie-details-id') as HTMLElement;
 
 // Similar movies
 export const SIMILAR_MOVIES = $('#main__similar-movies-id') as HTMLElement;
+export const SIMILAR_MOVIES_CAROUSEL = $('#similar-movies__carousel-container-id') as HTMLElement;
+export const SIMILAR_MOVIES_SCROLL = $('#similar-movies__carousel-scroll-id') as HTMLElement;
 
 // Generic carousel movies
 export const GENERIC_LIST = $('#main__generic-list-id') as HTMLElement;

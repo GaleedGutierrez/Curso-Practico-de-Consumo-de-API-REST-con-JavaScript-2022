@@ -4,7 +4,7 @@ block head
 	- const SEE_FOOTER = true
 	+style-head("style.css")
 	//- +style-head-responsive("homepage/tablet.css", "800")
-	+style-head-responsive("desktop.css", "1024")
+	+style-head-responsive("desktop.css", "800")
 	+titles("Platzi Movies")
 block main
 	main.main
@@ -37,15 +37,15 @@ block main
 
 		section#main__similar-movies-id.main__similar-movies.hidden
 			h3.similar-movies__title Películas similares
-			section.carousel
-				.carousel-container
+			section#similar-movies__carousel-scroll-id.carousel
+				#similar-movies__carousel-container-id.carousel-container
 					//- article
-					article.carousel__item
-						+figure-img("../assets/img/Movie Img.png", "Domy img")
-					article.carousel__item
-						+figure-img("../assets/img/Movie Img.png", "Domy img")
-					article.carousel__item
-						+figure-img("../assets/img/Movie Img.png", "Domy img")
+					//- article.carousel__item
+					//- 	+figure-img("../assets/img/Movie Img.png", "Domy img")
+					//- article.carousel__item
+					//- 	+figure-img("../assets/img/Movie Img.png", "Domy img")
+					//- article.carousel__item
+					//- 	+figure-img("../assets/img/Movie Img.png", "Domy img")
 
 		section#main__generic-list-id.main__generic-list.hidden
 			#generic-list__container-id.generic-list__container
@@ -53,7 +53,7 @@ block main
 				//- +figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
 				//- +figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
 				//- +figure-img("../assets/img/Movie Img.png", "Domy img").generic-list__img
-			button.generic-list__button.main__button-see-more Ver más
+			//- button.generic-list__button.main__button-see-more Ver más
 block scripts
 	script(async src="https://www.googletagmanager.com/gtag/js?id=G-M8H4YB694S")
 	script(src="../dist/googleAnalytics.js")

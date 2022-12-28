@@ -1,6 +1,6 @@
-import { getMovieById, getMovieBySearch, getMoviesByCategory, getTrendingMoviesPreview, setCategory, setGenericMoviesList } from './index.js';
+import { getMovieById, getMovieBySearch, getMoviesByCategory, getRelatedMoviesId, getTrendingMoviesPreview, setCategory, setGenericMoviesList } from './index.js';
 import { MovieSearchInterface } from './interfaces.mjs';
-import { BUTTONS_GO_BACK, BUTTON_SEARCH, BUTTON_TREADING, CATEGORIES_CONTAINER, GENERIC_LIST, HEADER_CATEGORY, HEADER_MAIN, HEADER_TITLE, MOVIE_DETAILS, SEARCH_INPUT, SIMILAR_MOVIES, TITLE_CATEGORY, TRENDING_PREVIEW } from './nodes.mjs';
+import { BUTTONS_GO_BACK, BUTTON_SEARCH, BUTTON_TREADING, CATEGORIES_CONTAINER, GENERIC_LIST, GENERIC_LIST_CONTAINER, HEADER_CATEGORY, HEADER_MAIN, HEADER_TITLE, MOVIE_DETAILS, SEARCH_INPUT, SIMILAR_MOVIES, SIMILAR_MOVIES_CAROUSEL, SIMILAR_MOVIES_SCROLL, TITLE_CATEGORY, TRENDING_PREVIEW } from './nodes.mjs';
 
 const navigator = () => {
 	window.scroll(0, 0);
@@ -57,7 +57,7 @@ const categoryPage = async () => {
 	TITLE_CATEGORY.innerHTML = (IS_THERE_SPACE)
 		? NAME.replace('%20', '&nbsp')
 		: NAME;
-	setGenericMoviesList(MOVIES, false);
+	setGenericMoviesList(MOVIES, GENERIC_LIST_CONTAINER, false);
 };
 
 const moviePage = async () => {
@@ -94,10 +94,12 @@ const moviePage = async () => {
 
 	const MOVIE_BUTTON_GO_BACK = document.querySelector('#movie-details__button-go-back-id') as HTMLButtonElement;
 	const MOVIE_CATEGORIES_CONTAINER = document.querySelector('#similar-movies__categories-container-id') as HTMLElement;
+	const RELATED_MOVIES = await getRelatedMoviesId(MOVIE.id);
 
 	MOVIE_BUTTON_GO_BACK.addEventListener('click', goBackButton);
-
 	setCategory(MOVIE.genres, MOVIE_CATEGORIES_CONTAINER, false);
+	setGenericMoviesList(RELATED_MOVIES, SIMILAR_MOVIES_CAROUSEL, true);
+	SIMILAR_MOVIES_SCROLL.scroll(0, 0);
 };
 
 const searchPage = async () => {
@@ -114,7 +116,7 @@ const searchPage = async () => {
 	const [ HASH_NAME, QUERY ] = location.hash.split('=');
 	const MOVIES = await getMovieBySearch(QUERY);
 
-	setGenericMoviesList(MOVIES, false);
+	setGenericMoviesList(MOVIES, GENERIC_LIST_CONTAINER, false);
 };
 
 const trendsPage = async () => {
@@ -135,7 +137,7 @@ const trendsPage = async () => {
 
 	const MOVIES = await getTrendingMoviesPreview();
 
-	setGenericMoviesList(MOVIES, false);
+	setGenericMoviesList(MOVIES, GENERIC_LIST_CONTAINER, false);
 };
 
 const goBackButton = () => {
